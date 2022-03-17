@@ -6,7 +6,7 @@
 /*   By: jparadis <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 18:56:22 by jparadis          #+#    #+#             */
-/*   Updated: 2022/03/16 16:31:13 by jparadis         ###   ########.fr       */
+/*   Updated: 2022/03/17 16:37:53 by jparadis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,21 @@ int	ft_str_is_numeric(char *str)
 {
 	int	i;
 
-	i = 0;
 	if (str[0] == '\0')
 	{
 		return (1);
 	}
-	while (str[i] != '\0')
+	else
 	{
-		if (!(str[i] >= '0' && str[i] <= '9'))
+		i = 0;
+		while (str[i] != '\0')
 		{
-			return (1);
+			if (!(str[i] >= '0' && str[i] <= '9'))
+			{
+				return (0);
+			}
+			i++;
 		}
-		i++;
+		return (1);
 	}
-	return (0);
 }

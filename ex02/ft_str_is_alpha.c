@@ -6,21 +6,30 @@
 /*   By: jparadis <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:01:26 by jparadis          #+#    #+#             */
-/*   Updated: 2022/03/16 16:28:32 by jparadis         ###   ########.fr       */
+/*   Updated: 2022/03/17 16:25:34 by jparadis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_str_alpha(char *str)
+int	ft_str_is_alpha(char *str)
 {
 	int	i;
 
-	i = 0;
-	while (str[i] != '\0')
+	if (str[0] == '\0')
 	{
-		if (!(str[i] >= 'a' && str[i] <= 'z')
-			|| (!(str[i] >= 'A' && str[i] <= 'Z')))
-			return (0);
-		i++;
+		return (1);
 	}
-	return (1);
+	else
+	{
+		i = 0;
+		while (str[i] != '\0')
+		{
+			if (!(str[i] >= 'a' && str[i] <= 'z')
+				&& (!(str[i] >= 'A' && str[i] <= 'Z')))
+			{
+				return (0);
+			}
+			i++;
+		}
+		return (1);
+	}
 }
